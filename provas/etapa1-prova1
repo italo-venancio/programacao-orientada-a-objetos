@@ -1,0 +1,50 @@
+#definir formula para calcular percentual de uso 
+def porcento(espaco, total):
+  porcent = (espaco*100)/total
+  return porcent
+
+#definir formula para conversao do espaco ocupado em disco
+def conversao(espaco1):
+  MB = espaco1/(10**6)
+  return MB
+
+#ler arquivo de entrada
+with open("usuarios.txt") as entrada:
+#criar relatorio
+  with open("relatorio.txt", "w") as saida:
+#escrever o cabecalho do relatorio    
+    print("ACME Inc.           Uso do espaco em disco pelos usuarios", file = saida)
+    print("------------------------------------------------------------------------", file = saida)
+    print("Nr.  Usuario        Espaco utilizado     % do uso", file = saida)
+    
+    total = int()
+    lista_espaco = []
+
+#ler o arquivo para definir o total de espaco   
+    for linha in entrada:
+      elementos = linha.split()
+      espaco = int(elementos[1])
+      lista_espaco = lista_espaco.append(espaco)
+    
+    quanti = len(lista_espaco)
+    total = conversao(sum(lista_espaco))
+      
+#escrever a linha correspondente a cada funcionario
+    nr = 1
+    for linha in entrada:
+      elementos = linha
+      usuario = elementos[0]
+      espaco1 = int(elementos[1])
+#converter o espaco ocupado em disco      
+      espaco2 = conversao(espaco1)
+#calcular percentual de uso      
+      porcentagem = porcento(espaco1,total)
+      print("{} {} {} MB {:.2f}%" .format(nr, usuario, espaco2, porcentagem), file = saida)
+      nr += 1 
+
+#fazer a media
+    media = total/quanti
+
+#escrever o total e a media
+    print("Espaco total ocupado: {:.2f} MB" .format(total), file = saida)  
+    print("Espaco medio ocupado: {:.2f} MB" .format(media), file = saida)
