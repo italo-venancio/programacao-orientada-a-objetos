@@ -1,0 +1,15 @@
+Questão 1) Crie uma classe que modele um planeta com os atributos nome, chuva, e superfície. 
+Para o atributo chuva, informe um material; ex: meteoros, granizo, diamantes. 
+Para o atributo superfície, informe uma característica; ex: ácida, fria, escura.
+Crie o método previsao_do_tempo. 
+Ele exibe a mensagem "Agora está chovendo <> na superfície <> do planeta <>.".
+Substitua os "<>" pelos atributos correspondentes.
+
+
+
+Questão 2) Crie uma classe que modele uma flor com os atributos cor e numero_de_petalas.
+Crie o método tirar_petalas.
+Ele decrementa o número de pétalas da flor.
+No primeiro decremento, mostre a mensagem "Bem me quer".
+No segundo, mostre "Mal me quer".
+Repita esse processo até o número de pétalas chegar a zero.
