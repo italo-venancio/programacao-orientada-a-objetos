@@ -1,0 +1,52 @@
+from datetime import datetime
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def __str__():
+        
+class Vendedor(Pessoa):
+    def __init__(self, nome, idade, salario):
+        super().Pessoa(nome, idade)
+        self.salario = salario
+
+class Cliente(Pessoa):
+    def __init__(self, nome, idade, compras=None):
+        super().Pessoa(nome, idade)
+        self.compras = compras
+        compras = []
+    
+    def registrar_compra(self):
+        compras.append(compra)
+
+    def get_data_ultima_compra(self):
+        ultima = self.compras[-1]
+        return ultima.data
+
+    def total_compras(self):
+        somatorio = sum(compras)
+        return somatorio
+
+class Compra:
+    def __init__(self, vendedor, data=None, valor):
+        self.vendedor = vendedor
+        self.data = datetime.now()
+        self.valor = valor
+
+def main():
+    # teste classe Pessoa
+    p1 = Pessoa("Cesar", 20)
+    # teste classe Vendedor
+    v1 = Vendedor("Talita", 25, 1000.00)
+    # teste classe Cliente
+    c1 = Cliente("Julio", 30)
+    c1.registrar_compra(Compra(v1, 50.00))
+    c1.get_data_ultima_compra()
+    c1.total_compras()
+    # teste classe Compra
+    comp1 = Compra(v1, 25.00)
+    
+if "__name__" == "__main__":
+    main()
